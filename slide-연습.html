@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-visual {
+            width:1000px;
+            height:700px;
+            overflow:hidden;
+            position:relative;
+           
+        }
+        .main-visual .slideArea  {
+            width:100%;
+            height:100%;
+            position:absolute;
+            
+        }
+        .main-visual .slideArea .slide { 
+            width:100%;
+            position:absolute;
+        }
+        .slideArea .slide img { width:100%; }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+        var slideShow = $('.main-visual'),
+            slideGroup = slideShow.find('.slideArea'),
+            slide = slideGroup.find('.slide'),
+            slideCount = slide.length,
+            curIndex = 0,
+            timer;
+
+
+        slide.each(function(i){  // i는 각각의 슬라이드 인덱스 번호를 가짐
+        $(this).css({left:i*100 + '%'})
+        });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <section class="main-visual">
+        <h2 class="blind">메인비주얼</h2>
+        <div class="slideArea">
+            <div class="slide"><img src="img/mainVisual/mainImg01.jpg" alt=""></div>
+            <div class="slide"><img src="img/mainVisual/mainImg02.jpg" alt=""></div>
+        </div>
+    </section>
+</body>
+</html>
